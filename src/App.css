@@ -151,3 +151,133 @@ body {
       
 }
 
+.filters{
+  background-color: rgba(24, 24, 24, 1);
+  color: rgba(255, 255, 255, 1);
+    font-family: "Poppins", sans-serif;
+  .head{
+    font-size: 24px;
+    font-weight: 600;
+    line-height: 32px;
+  }
+  .filtersResultsBox{
+    :nth-child(1 of div){
+      span {
+          font-weight: 500px;
+          font-size: 14px;
+          line-height: 24.32px;
+        }
+      
+        :nth-child(1 of span) {
+          color: rgba(151, 151, 151, 1);
+        }
+    }
+    .results{
+      min-height: 51px;
+      background-color: rgba(32, 32, 32, 1);
+      span{
+        font-size: 11px;
+        color: rgba(32, 32, 32, 1);
+        background-color: rgba(83, 172, 255, 1);
+        line-height: 18px;
+        font-weight: 400;
+        span{
+          font-size: 13px;
+        }
+      }
+    }
+  }
+  .stock{
+    background-color: rgba(32, 32, 32, 1);
+    h3{
+      margin: 0;
+      font-size: 15px;
+      line-height: 24px;
+      font-weight: 700;
+    }
+    .inputBox{
+      position: relative;
+      input{
+        background-color: rgba(49, 49, 49, 1);
+        border: none;
+        outline: none;
+        color:rgba(255, 255, 255, 1);
+      }
+      svg{
+        position: absolute;
+        color: rgba(107, 107, 107, 1);
+        right: 10px;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 13px;
+        height: 13px;
+      }
+    }
+    .industry{
+      :nth-child(2 of div){
+        div{
+          border-left: 1px solid rgba(255, 255, 255, 1);
+          
+          span{
+            transition: 0.3s;
+            font-size: 12px;
+              font-weight: 400;
+              line-height: 24.32px;
+            width: fit-content;
+            cursor: pointer;
+            &:hover{
+              background-color: rgba(83, 172, 255, 1) !important;
+              
+            }
+          }
+        }
+      }
+  }
+  .MarketsAndRisk{
+    form{
+
+      input[type="radio"]{
+      visibility: hidden;
+      }
+      input[type="radio"]:checked+label:before {
+        background-color: rgba(83, 172, 255, 1);
+      }
+      label{
+        position: relative;
+        cursor: pointer;
+          &:before {
+            position: absolute;
+            content: '';
+            height: 16px;
+            width: 16px;
+            border-radius: 50%;
+            border: 5px solid rgba(73, 73, 73, 1);
+            left: -32px;
+            top: 50%;
+            transform: translateY(-50%);
+          }
+          &::after {
+            position: absolute;
+            content: '';
+            height: 6px;
+            width: 6px;
+            border-radius: 50%;
+            background-color: transparent;
+            left: -27px;
+            top: 50%;
+            transform: translateY(-50%);
+            }
+        
+      }
+    }
+  }
+  button{
+    background-color: rgba(83, 172, 255, 1);
+    font-size: 20px;
+    color: rgba(255, 255, 255, 1);
+    font-weight: 600;
+    line-height: 24.32px;
+  }
+  }
+}
+

@@ -1,14 +1,14 @@
 import './App.css';
 import Alerts from './components/Alerts';
+import Filters from './components/Filters';
 
 function App() {
   return (
-    <div className="container-fluid app p-0">
+    <div className="container-fluid app ">
       <div className="row">
-        <div className="col-12 d-flex justify-content-end">
+        <div className="col-12 d-flex justify-content-end column-gap-3">
           <Alerts />
-        <div className='col-4'></div>
-          
+          <Filters/>
         </div>
     </div>
     </div>
