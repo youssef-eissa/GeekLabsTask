@@ -152,6 +152,7 @@ body {
 }
 
 .filters{
+  height: fit-content;
   background-color: rgba(24, 24, 24, 1);
   color: rgba(255, 255, 255, 1);
     font-family: "Poppins", sans-serif;
@@ -233,18 +234,20 @@ body {
         }
       }
   }
-  .MarketsAndRisk{
-    form{
-
-      input[type="radio"]{
-      visibility: hidden;
-      }
-      input[type="radio"]:checked+label:before {
-        background-color: rgba(83, 172, 255, 1);
-      }
-      label{
-        position: relative;
-        cursor: pointer;
+  .MarketsAndRisk>div>form{
+    
+        input[type="radio"] {
+          visibility: hidden;
+        }
+    
+        input[type="radio"]:checked+label:before {
+          background-color: rgba(83, 172, 255, 1);
+        }
+    
+        label {
+          position: relative;
+          cursor: pointer;
+    
           &:before {
             position: absolute;
             content: '';
@@ -256,6 +259,7 @@ body {
             top: 50%;
             transform: translateY(-50%);
           }
+    
           &::after {
             position: absolute;
             content: '';
@@ -266,18 +270,61 @@ body {
             left: -27px;
             top: 50%;
             transform: translateY(-50%);
-            }
-        
+          }
+    
+      }
+  }
+ 
+ 
+  :is(.strategy,.asset){
+    form{
+      /* height: 73px;
+      overflow: auto; */
+      position: relative;
+      border-radius: 6px;
+      input{
+        display: none !important;
+      }
+     label{
+      cursor: pointer;
+      font-size: 13px;
+      font-weight: 400;
+      line-height: 24.43px;
+    }
+    :nth-child(1 of div ){
+      label{
+        background: linear-gradient(to bottom,
+          rgba(32, 32, 32, 1),rgba(255, 255, 255, 1));
+          -webkit-text-fill-color: transparent;
+          -webkit-background-clip: text;
       }
     }
+        :nth-child(3 of div) {
+          label {
+              background: linear-gradient(to bottom,
+                rgba(255, 255, 255, 1),rgba(32, 32, 32, 1));
+              -webkit-text-fill-color: transparent;
+              -webkit-background-clip: text;
+            }
+        }
+      input[type="radio"]:checked+label {
+        background: rgba(83, 172, 255, 1);
+        -webkit-text-fill-color: white;
+        border-radius: 5px;
+        padding: 3px;
+        /* margin: 5px 0; */
+      
+      }
+    
+    }
   }
-  button{
-    background-color: rgba(83, 172, 255, 1);
-    font-size: 20px;
-    color: rgba(255, 255, 255, 1);
-    font-weight: 600;
-    line-height: 24.32px;
   }
-  }
+     button {
+       background-color: rgba(83, 172, 255, 1);
+       font-size: 20px;
+       color: rgba(255, 255, 255, 1);
+       font-weight: 600;
+       line-height: 24.32px;
+     }
 }
 
