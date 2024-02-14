@@ -28,6 +28,7 @@ const onClose = () => {
         onClose={onClose}
         open={open}
         width={250}
+                
     >
         <nav className={`col-12 h-100 d-flex flex-column align-items-center py-3 `}>
             <div className='logoBox'>

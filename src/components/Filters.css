@@ -138,8 +138,7 @@
 
         :is(.strategy, .asset) {
             form {
-                /* height: 73px;
-      overflow: auto; */
+
                 position: relative;
                 border-radius: 6px;
 
