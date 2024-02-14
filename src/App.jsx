@@ -1,4 +1,3 @@
-import FiltersButton from './AntdComponents/FiltersMobile';
 import './App.css';
 import Alerts from './components/Alerts';
 import Filters from './components/Filters';
@@ -12,7 +11,6 @@ function App() {
           <NavBar/>
           <Alerts />
           <Filters />
-          <FiltersButton/>
         </div>
     </div>
     </div>

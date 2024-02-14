@@ -192,18 +192,17 @@
     }
 }
 .MobileFilters{
-    width: 100% !important;
-    display: flex;
-    margin: 0 auto;
-    position: relative;
-    bottom: 0;
+  
     button{
-        font-family: "Poppins", sans-serif;
-        margin: 10px auto;
-        width: 200px;
-        left: 50%;
-        font-size: 15px;
-        font-weight: 700;
+        padding: 0;
+        width: 30px;
+        background-color: rgba(83, 172, 255, 1);
+        border: none;
+        
+        svg{
+        color: white;
+    }
+    
 }
 }
 .ant-drawer-body {
@@ -211,4 +210,7 @@
 }
 .ant-drawer-mask{
     background-color: #000000b5 !important;
+}
+:where(.css-dev-only-do-not-override-1xg9z9n).ant-btn-default:not(:disabled):not(.ant-btn-disabled):hover {
+    background-color: rgba(83, 172, 255, 1);
 }

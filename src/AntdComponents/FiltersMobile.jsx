@@ -30,17 +30,16 @@ const onClose = () => {
 
     return (
     <>
-    <Space  className='d-md-none MobileFilters col-12'>
+    <Space  className='d-md-none MobileFilters '>
        
-        <Button  className='d-flex align-items-center justify-content-center col-12' type="primary" onClick={showDrawer}>
-        <FaFilter size={10} className='me-2'/> Filters
+        <Button  className='d-flex align-items-center justify-content-center  '  onClick={showDrawer}>
+        <FaFilter size={15} /> 
         </Button>
     </Space>
     <Drawer 
         placement={'bottom'}
                 closable={false}
-                
-        onClose={onClose}
+                onClose={onClose}
                 open={open}
                 height={500}
                 style={{backgroundColor:'transparent'}}
