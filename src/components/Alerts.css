@@ -1,0 +1,218 @@
+.alerts {
+    header {
+        :is(h1, input) {
+            color: rgba(255, 255, 255, 1);
+        }
+
+        h1 {
+            width: fit-content;
+            font-family: "Poppins", sans-serif;
+            font-weight: 700;
+            font-size: 48px;
+            line-height: 72px;
+            text-transform: uppercase;
+            position: relative;
+
+            &::before {
+                position: absolute;
+                content: '';
+                height: 48px;
+                width: 5px;
+                border-radius: 10px;
+                background-color: rgba(83, 172, 255, 1);
+                left: -20px;
+                top: 50%;
+                transform: translateY(-50%);
+            }
+        }
+
+        .SearchBox {
+            position: relative;
+
+            input {
+                background-color: rgba(49, 49, 49, 1);
+                border: none;
+                outline: none;
+                font-family: Poppins;
+                font-size: 15px;
+                font-weight: 400;
+                line-height: 24px;
+                letter-spacing: 0px;
+                text-align: left;
+
+            }
+
+            input::placeholder {
+                color: rgba(255, 255, 255, 1);
+            }
+
+            svg {
+                position: absolute;
+                right: 10px;
+                top: 50%;
+                transform: translateY(-50%);
+                color: rgba(151, 151, 151, 1);
+                width: 19.31px;
+                height: 20.77px;
+
+            }
+        }
+
+        .badgeBox {
+            svg {
+                font-size: 30px;
+                color: rgba(83, 172, 255, 1);
+            }
+        }
+    }
+
+    .alertsBody {
+        height: calc(100vh - 72px) !important;
+        overflow: auto;
+
+        .collapse {
+            .ant-collapse-header {
+                padding: 0;
+                background-color: rgba(49, 49, 49, 1);
+
+                :hover {
+                    background-color: rgba(83, 172, 255, 1);
+
+                    .alertLabel {
+                        div {
+                            font-weight: bold;
+                            border-right: 1px solid white;
+                        }
+
+                        :is(:nth-child(4 of div)) {
+                            border: none;
+                        }
+
+                    }
+                }
+            }
+
+            .alertLabel {
+                background-color: rgba(49, 49, 49, 1);
+
+                .percent {
+                    color: rgba(217, 65, 17, 1);
+                }
+
+                div {
+                    color: rgba(255, 255, 255, 1);
+                    font-family: "Poppins", sans-serif;
+                    font-weight: 400;
+                    font-size: 15px;
+                    border-right: 1px solid rgba(65, 64, 64, 1);
+                }
+
+                :is(:nth-child(4 of div)) {
+                    border: none;
+                }
+
+            }
+
+        }
+
+        .ant-collapse {
+            :is(:nth-child(2 of .ant-collapse-item), :nth-child(3 of .ant-collapse-item), :nth-child(5 of .ant-collapse-item)) {
+                .percent {
+                    color: rgba(17, 143, 75, 1);
+                }
+            }
+
+            .ant-collapse-content-box {
+                background-color: black;
+
+                .alertText {
+                    color: rgba(255, 255, 255, 1);
+                    font-family: "Poppins", sans-serif;
+                    font-size: 16px;
+
+                    div {
+                        span {
+                            font-weight: 800;
+                        }
+                    }
+
+                    p {
+                        span {
+                            text-decoration: underline;
+                            color: rgba(83, 172, 255, 1);
+                        }
+                    }
+                }
+            }
+
+        }
+
+        .ant-collapse-item-active {
+            .alertLabel {
+                background-color: rgba(83, 172, 255, 1);
+
+                div {
+                    font-weight: bold;
+                    border-right: 1px solid white;
+                }
+            }
+        }
+    }
+
+}
+
+@media (max-width:768px) {
+.alerts {
+    header {
+        h1 {
+        font-size: 24px;
+        line-height: 50px;
+        &::before {
+            height: 24px;
+        }
+        }
+        .badgeBox {
+        svg {
+            font-size: 26px;
+        }
+        }
+    }
+    .alertsBody {
+        height: calc(100vh - 114px) !important;
+        .collapse {
+        .ant-collapse-header {
+            :hover {
+            background-color: inherit;
+            .alertLabel {
+                div {
+                font-weight: normal;
+                border-right: 1px solid rgba(65, 64, 64, 1);
+                }
+                :is(:nth-child(4 of div)) {
+                border: none;
+                }
+            }
+            }
+        }
+        .alertLabel {
+
+            div {
+            font-size: 12px;
+            }
+        }
+    }
+        .ant-collapse {
+        .ant-collapse-content-box {
+            .alertText {
+            font-size: 13px;
+            div {
+                span {
+                font-weight: 700;
+                }
+            }
+            }
+        }
+        }
+    }
+    }
+}

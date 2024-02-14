@@ -1,7 +1,8 @@
+import './NavBar.css'
 import logo from '../assets/logo.svg'
 import { FaGraduationCap } from "react-icons/fa";
 import { motion } from 'framer-motion'
-import { useRef, useState } from 'react'
+import { useCallback, useRef, useState } from 'react'
 import { FaGears } from "react-icons/fa6";
 import { BsFillBellFill } from "react-icons/bs";
 import { ImFolderOpen } from "react-icons/im";
@@ -9,18 +10,15 @@ import { AiOutlineStock } from "react-icons/ai";
 import user from '../assets/user.svg'
 
 
-
-
-
 function NavBar() {
     const [open, setOpen] = useState(false)
     const NavRef = useRef(null)
-    function handleNavOpen() {
+  
+    const handleNavOpen=useCallback(()=>{
         setOpen(!open)
-    }
-
+    },[open])
 return (
-    <div className='col-1 d-flex navbar justify-content-center p-0'>
+    <div className='col-1 d-md-flex d-none navbar justify-content-center p-0'>
         <motion.nav transition={{bounce:0.3, duration:0.6, type:'spring'}} animate={open?{width:'180px'}:{width:''}} onMouseLeave={handleNavOpen} onMouseEnter={handleNavOpen} ref={NavRef} className={`col-9 h-100 d-flex flex-column align-items-center py-3 ${open?'open':''}`}>
             <motion.div animate={open?{width:'124px',height:'54px'}:{width:'',height:''}} className='logoBox'>
                 <img alt='logo' src={ logo} className='img-fluid h-100 w-100 ' />

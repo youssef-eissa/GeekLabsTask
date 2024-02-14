@@ -236,17 +236,17 @@ const Alerts = [
 const AlertsMap = Alerts.map((item) => {
     return {
         key: item.id,
-        label: <div className='col-12 d-flex alertLabel p-4'>
+        label: <div className='col-12 d-flex alertLabel p-md-4 p-1'>
             <div className='col-3 d-flex align-items-center justify-content-center'>
-                <img src={dollar} alt="dollar" className='me-4' /> {item.name}</div>
+                <img src={dollar} alt="dollar" className='me-md-4 me-1' /> {item.name}</div>
             <div className='col-3 d-flex align-items-center justify-content-center'>
-                <img src={number} alt="number" className='me-4' />
+                <img src={number} alt="number" className='me-md-4 me-1' />
                 {item.number}</div>
             <div className='col-3 d-flex align-items-center justify-content-center percent'>
-                <img src={percent} alt="percent" className='me-4' />
+                <img src={percent} alt="percent" className='me-md-4 me-1' />
                 {item.percent} %</div>
             <div className='col-3 d-flex align-items-center justify-content-center'>
-                <img src={item.risk==='Low Risk' ? `${lowrisk}` : highrisk} alt="risk" className='me-4' />
+                <img src={item.risk==='Low Risk' ? `${lowrisk}` : highrisk} alt="risk" className='me-md-4 me-1' />
                 {item.risk}</div>
         </div>,
         children: item.text(item.name),
@@ -256,6 +256,6 @@ const AlertsMap = Alerts.map((item) => {
 });
 const AlertsCollapse = () => {
 
-    return <Collapse ghost style={{backgroundColor:'transparent'}} bordered={false} className='col-12 d-flex flex-column row-gap-3 collapse' items={AlertsMap} />;
+    return <Collapse ghost style={{backgroundColor:'transparent'}} bordered={false} className='col-12 p-1 p-md-0 d-flex flex-column row-gap-3 collapse' items={AlertsMap} />;
 };
 export default AlertsCollapse;

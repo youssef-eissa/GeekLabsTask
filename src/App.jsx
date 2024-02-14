@@ -7,7 +7,7 @@ function App() {
   return (
     <div className="container-fluid app ">
       <div className="row">
-        <div className="col-12 d-flex justify-content-between column-gap- p-0">
+        <div className="col-12 d-flex justify-content-between flex-md-row flex-column p-0">
           <NavBar/>
           <Alerts />
           <Filters/>
