@@ -42,7 +42,7 @@ const onClose = () => {
                 
         onClose={onClose}
                 open={open}
-                height={775}
+                height={730}
                 style={{backgroundColor:'transparent'}}
             >
         <div className='col-12 filters  rounded  flex-column p-3'>
