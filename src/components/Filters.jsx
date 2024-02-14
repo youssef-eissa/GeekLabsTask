@@ -273,7 +273,7 @@ function Filters() {
                 </div>
                 
             </div>
-            <button className="col-6 d-flex mx-auto justify-content-center align-items-center p-2 btn mt-4 ">Apply</button>
+            <button className="col-6 d-flex mx-auto justify-content-center align-items-center p-2 rounded mt-4 ">Apply</button>
         </div>
 )
 }
