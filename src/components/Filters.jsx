@@ -23,7 +23,7 @@ function Filters() {
     const [strategy, setStrategy] = useState('bigoption')
     const [asset, setAsset] = useState('stocks')
     return (
-        <div className='col-md-4 col-12 filters my-3 rounded d-flex flex-column p-3'>
+        <div className='col-md-4 col-12 filters my-md-3 rounded d-flex flex-column p-3'>
             <div className="head d-flex align-self-center">Filters</div>
             <div className="filtersResultsBox col-12 d-flex flex-column">
                 <div className="col-12 d-flex justify-content-between">
