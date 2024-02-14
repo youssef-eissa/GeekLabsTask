@@ -9,6 +9,7 @@ import { ImFolderOpen } from "react-icons/im";
 import { AiOutlineStock } from "react-icons/ai";
 import user from '../assets/user.svg'
 
+
 const Menu = () => {
     const [open, setOpen] = useState(false);
  

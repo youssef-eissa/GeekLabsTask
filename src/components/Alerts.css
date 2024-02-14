@@ -178,7 +178,7 @@
         }
     }
     .alertsBody {
-        height: calc(100vh - 114px) !important;
+        height: calc(100vh - 166px) !important;
         .collapse {
         .ant-collapse-header {
             :hover {

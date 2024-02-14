@@ -1,5 +1,6 @@
-import './Filters.css'
-import { useState } from "react"
+import { useState } from 'react';
+import { Button, Drawer, Space } from 'antd';
+import { FaFilter } from "react-icons/fa";
 import { FaSearch } from "react-icons/fa";
 import { IoMdArrowDropdown } from "react-icons/io";
 import health from '../assets/health.svg'
@@ -13,17 +14,38 @@ import communications from '../assets/communications.svg'
 import industrials from '../assets/industrials.svg'
 import utilities from '../assets/utilities.svg'
 import Financials from '../assets/financials.svg'
-
-
-
-function Filters() {
+const FiltersButton = () => {
+const [open, setOpen] = useState(false);
+const showDrawer = () => {
+    setOpen(true);
+};
+const onClose = () => {
+    setOpen(false);
+};
     const [search, setSearch] = useState('')
     const [market,setMarket]=useState('micro')
     const [risk,setRisk]=useState('low')
     const [strategy, setStrategy] = useState('bigoption')
     const [asset, setAsset] = useState('stocks')
+
     return (
-        <div className='col-md-4 col-12 filters my-md-3 rounded d-md-flex d-none flex-column p-4'>
+    <>
+    <Space  className='d-md-none MobileFilters col-12'>
+       
+        <Button  className='d-flex align-items-center justify-content-center col-12' type="primary" onClick={showDrawer}>
+        <FaFilter size={10} className='me-2'/> Filters
+        </Button>
+    </Space>
+    <Drawer 
+        placement={'bottom'}
+                closable={false}
+                
+        onClose={onClose}
+                open={open}
+                height={775}
+                style={{backgroundColor:'transparent'}}
+            >
+        <div className='col-12 filters  rounded  flex-column p-3'>
             <div className="head d-flex align-self-center">Filters</div>
             <div className="filtersResultsBox col-12 d-flex flex-column">
                 <div className="col-12 d-flex justify-content-between">
@@ -114,19 +136,19 @@ function Filters() {
                             <div className="col-12 d-flex ">
                                 <input
                                     type="radio"
-                                    id='micro'
+                                    id='microM'
                                     name="market"
                                     className="me-3"
                                     value='micro'
                                     onChange={(e) => setMarket(e.target.value)}
                                     checked={market==='micro'}
                                 />
-                                <label htmlFor="micro">Micro</label>
+                                <label htmlFor="microM">Micro</label>
                             </div>
                             <div className="col-12 d-flex ">
                                 <input
                                     type="radio"
-                                    id='small'
+                                    id='smallM'
                                     name="market"
                                     className="me-3"
                                     value='small'
@@ -134,19 +156,19 @@ function Filters() {
                                     checked={market==='small'}
 
                                 />
-                                <label htmlFor="small">Small</label>
+                                <label htmlFor="smallM">Small</label>
                             </div>
                             <div className="col-12 d-flex ">
                                 <input
                                     type="radio"
-                                    id='large'
+                                    id='largeM'
                                     name="market"
                                     className="me-3"
                                     value='large'
                                     onChange={(e) => setMarket(e.target.value)}
                                     checked={market==='large'}
                                 />
-                                <label htmlFor="large">Large</label>
+                                <label htmlFor="largeM">Large</label>
                             </div>
                         </form>
                         <div className="strategy col-12 mt-3 d-flex flex-column">
@@ -155,35 +177,35 @@ function Filters() {
                                 <div className="col-12 d-flex justify-content-center">
                                     <input
                                         type="radio"
-                                        id='bigoption'
+                                        id='bigoptionM'
                                         name="strategy"
                                         value='bigoption'
                                         onChange={(e) => setStrategy(e.target.value)}
                                         checked={strategy==='bigoption'}
                                     />
-                                    <label htmlFor="bigoption">Big Option Buys</label>
+                                    <label htmlFor="bigoptionM">Big Option Buys</label>
                                 </div>
                                 <div className="col-12 d-flex justify-content-center">
                                     <input
                                         type="radio"
-                                        id='Merger'
+                                        id='MergerM'
                                         name="strategy"
                                         value='Merger'
                                         onChange={(e) => setStrategy(e.target.value)}
                                         checked={strategy==='Merger'}
                                     />
-                                    <label htmlFor="Merger">Merger Arbitrage</label>
+                                    <label htmlFor="MergerM">Merger Arbitrage</label>
                                 </div>
                                 <div className="col-12 d-flex justify-content-center">
                                     <input
                                         type="radio"
-                                        id='Short'
+                                        id='ShortM'
                                         name="strategy"
                                         value='Short'
                                         onChange={(e) => setStrategy(e.target.value)}
                                         checked={strategy==='Short'}
                                     />
-                                    <label htmlFor="Short">Short Reports</label>
+                                    <label htmlFor="ShortM">Short Reports</label>
                                 </div>
                             </form>
                         </div>
@@ -197,38 +219,38 @@ function Filters() {
                             <div className="col-12 d-flex ">
                                 <input
                                     type="radio"
-                                    id='low'
+                                    id='lowM'
                                     name="Risk"
                                     className="me-3"
                                     value='low'
                                     onChange={(e) => setRisk(e.target.value)}
                                     checked={risk==='low'}
                                 />
-                                <label htmlFor="low">Low Risk</label>
+                                <label htmlFor="lowM">Low Risk</label>
                             </div>
                             <div className="col-12 d-flex ">
                                 <input
                                     type="radio"
-                                    id='mid'
+                                    id='midM'
                                     name="Risk"
                                     className="me-3"
                                     value='mid'
-                                    onChange={(e) => setRisk(e.target.value)}
+                                            onChange={(e) =>  setRisk(e.target.value)}
                                     checked={risk==='mid'}
                                 />
-                                <label htmlFor="mid">Mid Risk</label>
+                                <label htmlFor="midM">Mid Risk</label>
                             </div>
                             <div className="col-12 d-flex ">
                                 <input
                                     type="radio"
-                                    id='high'
+                                    id='highM'
                                     name="Risk"
                                     className="me-3"
                                     value='high'
                                     onChange={(e) => setRisk(e.target.value)}
                                     checked={risk==='high'}
                                 />
-                                <label htmlFor="high">High Risk</label>
+                                <label htmlFor="highM">High Risk</label>
                             </div>
                         </form>
                         <div className="asset col-12 mt-3 d-flex flex-column">
@@ -237,35 +259,35 @@ function Filters() {
                                 <div className="col-12 d-flex justify-content-center">
                                     <input
                                         type="radio"
-                                        id='stocks'
+                                        id='stocksM'
                                         name="asset"
                                         value='stocks'
                                         onChange={(e) => setAsset(e.target.value)}
                                         checked={asset==='stocks'}
                                     />
-                                    <label htmlFor="stocks">Stocks</label>
+                                    <label htmlFor="stocksM">Stocks</label>
                                 </div>
                                 <div className="col-12 d-flex justify-content-center">
                                     <input
                                         type="radio"
-                                        id='options'
+                                        id='optionsM'
                                         name="asset"
                                         value='options'
                                         onChange={(e) => setAsset(e.target.value)}
                                         checked={asset==='options'}
                                     />
-                                    <label htmlFor="options">Options</label>
+                                    <label htmlFor="optionsM">Options</label>
                                 </div>
                                 <div className="col-12 d-flex justify-content-center">
                                     <input
                                         type="radio"
-                                        id='futures'
+                                        id='futuresM'
                                         name="asset"
                                         value='futures'
                                         onChange={(e) => setAsset(e.target.value)}
                                         checked={asset==='futures'}
                                     />
-                                    <label htmlFor="futures">Futures</label>
+                                    <label htmlFor="futuresM">Futures</label>
                                 </div>
                             </form>
                         </div>
@@ -274,9 +296,10 @@ function Filters() {
                 </div>
                 
             </div>
-            <button className="col-6 d-flex mx-auto justify-content-center align-items-center p-2 rounded mt-5 ">Apply</button>
+            <button onClick={onClose} className="col-6 d-flex mx-auto justify-content-center align-items-center p-2 rounded mt-5 ">Apply</button>
         </div>
-)
-}
-
-export default Filters
+    </Drawer>
+    </>
+  );
+};
+export default FiltersButton;

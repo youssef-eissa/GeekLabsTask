@@ -1,5 +1,4 @@
 .filters {
-    height: fit-content;
     background-color: rgba(24, 24, 24, 1);
     color: rgba(255, 255, 255, 1);
     font-family: "Poppins", sans-serif;
@@ -191,4 +190,25 @@
         line-height: 24.32px;
         border: none;
     }
+}
+.MobileFilters{
+    width: 100% !important;
+    display: flex;
+    margin: 0 auto;
+    position: relative;
+    bottom: 0;
+    button{
+        font-family: "Poppins", sans-serif;
+        margin: 10px auto;
+        width: 200px;
+        left: 50%;
+        font-size: 15px;
+        font-weight: 700;
+}
+}
+.ant-drawer-body {
+    padding: 0 !important;
+}
+.ant-drawer-mask{
+    background-color: #000000b5 !important;
 }
